@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    /* Estilos para formatar a página */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgb(255, 255, 255);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #troco {
+      text-align: center;
+      margin: 20px auto;
+      width: 200px;
+      padding: 10px;
+      border: 1px solid black;
+    }
+
+    table {
+      margin: 20px auto;
+      width: 200px;
+      padding: 10px;
+      border: 1px solid black;
+    }
+
+
+    #resultado {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <h1>Moeda Fácil</h1>
+
+  <div id="troco">
+    <h2>Valor da compra:</h2>
+
+    <label>Valor:
+      <input type="number" id="valorCompra" min="0" step="0.01">
+    </label><br>
+
+    <h2>Valor pago:</h2>
+
+    <label>Valor:
+      <input type="number" id="valorPago" min="0" step="0.01">
+    </label><br>
+
+    <button id="calcularBtn">Calcular</button>
+  </div>
+
+  <div id="resultado"></div>
+
+  <script>
+    document.getElementById("calcularBtn").addEventListener("click", function () {
+      calcularTroco();
+    });
+
+    function encontrarMenorTroco(valorTroco) {
+      const moedas = [100, 50, 25, 10, 5, 1]; // Denominações das moedas disponíveis
+      const quantidadeMoedas = {}; // Objeto para armazenar a quantidade de moedas de cada valor
+
+      function inicializarQuantidadeMoedas() {
+        for (let i = 0; i < moedas.length; i++) {
+          const moeda = moedas[i];
+          quantidadeMoedas[moeda] = 0; // Inicializa a quantidade de cada moeda como 0
+        }
+      }
+      
+
+      inicializarQuantidadeMoedas(); // Inicializa o objeto de resposta com 0 moedas para cada valor
+
+      for (let i = 0; i < moedas.length; i++) {
+        const valorMoeda = moedas[i];
+        while (valorTroco >= valorMoeda) {
+          quantidadeMoedas[valorMoeda]++;
+          valorTroco -= valorMoeda;
+        }
+      }
+
+      return quantidadeMoedas; // Retorna o objeto com a quantidade de moedas de cada valor
+    }
+
+    function calcularTroco() {
+      const valorCompra = parseFloat(document.getElementById("valorCompra").value) || 0;
+      const valorPago = parseFloat(document.getElementById("valorPago").value) || 0;
+      const troco = Math.round((valorPago - valorCompra) * 100); // Troco em centavos
+      const trocoQtdValores = encontrarMenorTroco(troco);
+
+      if (troco < 0) {
+        document.getElementById("resultado").innerHTML = "Pagamento insuficiente.";
+        return;
+      }
+
+      let resultado = "<table>";
+      resultado += "<tr><th>Valor</th><th>Quantidade</th></tr>";
+
+      for (const moeda in trocoQtdValores) {
+        const quantidade = trocoQtdValores[moeda];
+        resultado += "<tr><td>" + moeda + "</td><td>" + quantidade + "</td></tr>";
+      }
+
+      resultado += "</table>";
+      resultado += "Troco Total: " + troco + " centavos";
+
+      document.getElementById("resultado").innerHTML = resultado;
+    }
+  </script>
+</body>
+
+</html>
