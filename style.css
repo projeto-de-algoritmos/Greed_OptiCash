@@ -1,0 +1,39 @@
+body {
+    padding: 10px;
+    background-color: #243c5a;
+  }
+
+  h1 {
+    color: white;
+  }
+
+  #resultado {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+  button {
+    margin-top: 15px;
+  }
+
+  #quantidadesMaximas {
+    display: none;
+  }
+
+  .espc {
+    padding-right: 15px;
+  }
+
+  .card {
+    background-color: #cde7f5;
+    border: 1px solid #243c5a;
+    border-radius: 1em;
+    color: #243c5a;
+  }
+
+  .custom-button {
+    background-color: #007a7a;
+    color: #fff;
+    border: 1px solid #007a7a;
+
+  }
