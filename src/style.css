@@ -37,3 +37,39 @@ body {
     border: 1px solid #007a7a;
 
   }
+
+  @keyframes fadeInRow {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .fade-in-table th,
+  .fade-in-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .fade-in-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .fade-in-row {
+    animation: fadeInRow 0.5s ease-in-out;
+  }
+  
+  .fade-in-table .quantidade {
+    text-align: right;
+  }
+  
