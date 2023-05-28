@@ -25,8 +25,8 @@ O projeto web "OptiCash" é uma aplicação que utiliza o algoritmo trocador par
 
 
 ### Passo 1:
-Execute o arquivo index.html localizado no diretório src em seu navegador de preferência.
-
+Execute o arquivo index.html em seu navegador de preferência, ou acesse este link [OptiCash](https://projeto-de-algoritmos.github.io/Greed_OptiCash/)
+>Nota: A aplicação tem limite de usuários simultâneos limitados.
 ## Uso
 ### Passo 1:
 Insira o valor da compra.
