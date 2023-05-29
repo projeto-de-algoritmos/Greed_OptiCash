@@ -1,4 +1,4 @@
-# Contexto
+# OptiCash
 
 **Número da Lista**: 12<br>
 **Conteúdo da Disciplina**: Algorítmos Ambiciosos<br>
@@ -14,8 +14,15 @@ O projeto web "OptiCash" é uma aplicação que utiliza o algoritmo trocador par
 
 ## Screenshots
 
-![OptiCash](src/assets/print1.png)
-![OptiCash](src/assets/print2.png)
+
+
+<img src="src/assets/print1.png" alt="print1" width="450" height="500">
+
+
+<img src="src/assets/print2.png" alt="print2" width="450" height="900">
+
+
+<img src="src/assets/print3.png" alt="print3" width="500" height="800">
 
 ## Video de Apresentação
 [![Watch the video](src/assets/thumbnail.png)](https://youtu.be/q1VgHaHhAUw)
